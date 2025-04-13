@@ -4,51 +4,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anandhu V Panicker | Flutter Developer</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-900 font-sans">
   <header class="p-6 flex items-center justify-between shadow-md">
-    <h1 class="text-2xl font-bold">Anandhu V Panicker</h1>
-  
-  </header>  <section class="text-center py-20 px-6 bg-blue-50">
+    <h1 class="text-2xl font-bold"><i class="fas fa-code text-amber-500"></i> Anandhu V Panicker</h1>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="#projects" class="hover:text-amber-600">Projects</a></li>
+        <li><a href="#skills" class="hover:text-amber-600">Skills</a></li>
+        <li><a href="#contact" class="hover:text-amber-600">Contact</a></li>
+      </ul>
+    </nav>
+  </header>  <section class="text-center py-20 px-6 bg-blue-50 fade-in">
+    <img src="https://via.placeholder.com/150" alt="Anandhu Avatar" class="mx-auto mb-6 rounded-full shadow-md w-32 h-32">
     <h2 class="text-4xl font-bold mb-4">Crafting Cross-Platform Experiences</h2>
     <p class="text-lg max-w-2xl mx-auto mb-6">
       I'm Anandhu V Panicker, a Flutter developer passionate about building intuitive, high-performance apps for iOS and Android using clean architecture and innovative design.
     </p>
-    <a href="#projects" class="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">See My Work</a>
-  </section>  <section id="projects" class="py-20 px-6 bg-white">
+    <a href="#projects" class="inline-block bg-amber-500 text-white py-3 px-8 md:px-6 rounded-lg text-lg font-semibold hover:bg-amber-600 transition w-full max-w-xs md:max-w-fit">See My Work</a>
+  </section>  <section id="projects" class="py-20 px-6 bg-white fade-in">
     <h3 class="text-3xl font-bold text-center mb-10">Featured Projects</h3>
     <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
       <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <h4 class="text-xl font-semibold mb-2">Smart Health Tracker</h4>
-        <p class="text-gray-700">A Flutter app integrated with wearable APIs to monitor real-time health vitals, activity levels, and deliver intelligent insights.</p>
+        <h4 class="text-xl font-semibold mb-2">Loren Ipsum App</h4>
+        <p class="text-gray-700">A conceptual app demonstrating user-centric design and robust backend integration using Flutter and Firebase.</p>
       </div>
       <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <h4 class="text-xl font-semibold mb-2">Stock Pulse</h4>
-        <p class="text-gray-700">A real-time trading companion with Flutter + Firebase, showing live stock trends, AI predictions, and portfolio tracking.</p>
+        <h4 class="text-xl font-semibold mb-2">Loren Ipsum Platform</h4>
+        <p class="text-gray-700">A scalable Flutter-based platform for connecting services, using clean code architecture and responsive layouts.</p>
       </div>
       <div class="bg-gray-100 p-6 rounded-lg shadow">
-        <h4 class="text-xl font-semibold mb-2">FitVerse</h4>
-        <p class="text-gray-700">A community-driven fitness app that gamifies health goals and social accountability, crafted entirely in Flutter.</p>
+        <h4 class="text-xl font-semibold mb-2">Loren Ipsum Toolset</h4>
+        <p class="text-gray-700">A set of Flutter-powered utilities aimed at boosting productivity and simplifying everyday tasks.</p>
       </div>
     </div>
-  </section>  <section id="skills" class="py-20 px-6 bg-blue-50">
+  </section>  <section id="skills" class="py-20 px-6 bg-blue-50 fade-in">
     <h3 class="text-3xl font-bold text-center mb-10">Skills & Expertise</h3>
     <ul class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <li class="bg-white p-4 rounded-lg shadow">Flutter & Dart</li>
-      <li class="bg-white p-4 rounded-lg shadow">Firebase</li>
-      <li class="bg-white p-4 rounded-lg shadow">REST API Integration</li>
-      <li class="bg-white p-4 rounded-lg shadow">State Management (Provider, BLoC)</li>
-      <li class="bg-white p-4 rounded-lg shadow">Clean Architecture</li>
-      <li class="bg-white p-4 rounded-lg shadow">UI/UX Design Principles</li>
-      <li class="bg-white p-4 rounded-lg shadow">Git & CI/CD</li>
-      <li class="bg-white p-4 rounded-lg shadow">Agile Workflow</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fab fa-flutter text-amber-500"></i> Flutter & Dart</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fas fa-database text-amber-500"></i> Firebase</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fas fa-link text-amber-500"></i> REST APIs</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fas fa-sitemap text-amber-500"></i> State Management</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fas fa-cubes text-amber-500"></i> Clean Architecture</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fas fa-pencil-ruler text-amber-500"></i> UI/UX Principles</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fas fa-code-branch text-amber-500"></i> Git & CI/CD</li>
+      <li class="bg-white p-4 rounded-lg shadow"><i class="fas fa-tasks text-amber-500"></i> Agile Workflow</li>
     </ul>
-  </section>  <section id="contact" class="py-20 px-6 text-center">
+  </section>  <section id="contact" class="py-20 px-6 text-center fade-in">
     <h3 class="text-3xl font-bold mb-4">Let's Build Something Great</h3>
     <p class="mb-6">Open to freelance, collaborations, or full-time opportunities. Let's connect!</p>
-    <a href="mailto:anandhu@example.com" class="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">Get in Touch</a>
+    <a href="mailto:anandhu@example.com" class="inline-block bg-amber-500 text-white py-3 px-8 md:px-6 rounded-lg text-lg font-semibold hover:bg-amber-600 transition w-full max-w-xs md:max-w-fit">Get in Touch</a>
   </section>  <footer class="p-6 text-center text-gray-500 text-sm">
     &copy; 2025 Anandhu V Panicker. All rights reserved.
-  </footer>
-</body>
+  </footer>  <script>
+    // Simple animation for sections on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script></body>
 </html>
