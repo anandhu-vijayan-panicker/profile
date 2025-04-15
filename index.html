@@ -18,6 +18,55 @@
       gtag("config", "G-5QFSN3D07S");
     </script>
 
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "1009787346893554");
+      fbq("track", "PageView");
+    </script>
+
+    <!-- Twitter conversion tracking base code -->
+    <script>
+      !(function (e, t, n, s, u, a) {
+        e.twq ||
+          ((s = e.twq =
+            function () {
+              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+            }),
+          (s.version = "1.1"),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = "https://static.ads-twitter.com/uwt.js"),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+      })(window, document, "script");
+      twq("config", "ph57w");
+    </script>
+    <!-- End Twitter conversion tracking base code -->
+
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
@@ -27,7 +76,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto Condensed"
       rel="stylesheet"
     />
-    <title>John Doe | Flutter Developer</title>
+    <title>panicken | Low Code API Builder</title>
     <style>
       html {
         scroll-behavior: smooth;
@@ -648,201 +697,6 @@
       .feature img {
         width: 867px;
       }
-      
-      /* New Portfolio Styles */
-      .projects-section {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        padding: 80px 34px;
-      }
-      
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-      }
-      
-      .project-card {
-        background: #272727;
-        border-radius: 10px;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-      }
-      
-      .project-card:hover {
-        transform: translateY(-5px);
-      }
-      
-      .project-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      
-      .project-content {
-        padding: 20px;
-      }
-      
-      .project-title {
-        color: #fff;
-        font-family: Roboto Condensed;
-        font-size: 20px;
-        margin: 0 0 10px 0;
-      }
-      
-      .project-description {
-        color: #c0c0c0;
-        font-family: Roboto;
-        font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 15px;
-      }
-      
-      .project-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 15px;
-      }
-      
-      .tech-tag {
-        background: rgba(255, 87, 87, 0.2);
-        color: #ff5757;
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-      }
-      
-      .project-links {
-        display: flex;
-        gap: 10px;
-      }
-      
-      .project-link {
-        color: #fff;
-        text-decoration: none;
-        font-size: 14px;
-        padding: 6px 12px;
-        border-radius: 5px;
-        transition: background 0.3s ease;
-      }
-      
-      .project-link.code {
-        background: #375a77;
-      }
-      
-      .project-link.demo {
-        background: #ff5757;
-      }
-      
-      .skills-section {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        padding: 80px 34px;
-      }
-      
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-      }
-      
-      .skill-card {
-        background: #272727;
-        border-radius: 10px;
-        padding: 30px;
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
-      
-      .skill-card:hover {
-        transform: translateY(-5px);
-      }
-      
-      .skill-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 15px;
-      }
-      
-      .skill-name {
-        color: #fff;
-        font-family: Roboto Condensed;
-        font-size: 18px;
-        margin: 0 0 10px 0;
-      }
-      
-      .skill-level {
-        height: 5px;
-        background: #454545;
-        border-radius: 5px;
-        margin-top: 15px;
-        overflow: hidden;
-      }
-      
-      .skill-level-fill {
-        height: 100%;
-        background: linear-gradient(97deg, #ff5757 6.3%, #375a77 100%);
-      }
-      
-      .about-section {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        padding: 80px 34px;
-        display: flex;
-        align-items: center;
-        gap: 50px;
-      }
-      
-      .about-image {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 5px solid #ff5757;
-      }
-      
-      .about-content {
-        flex: 1;
-      }
-      
-      .experience-item {
-        margin-bottom: 30px;
-      }
-      
-      .experience-date {
-        color: #ff5757;
-        font-family: Roboto;
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-      
-      .experience-title {
-        color: #fff;
-        font-family: Roboto Condensed;
-        font-size: 20px;
-        margin: 0 0 10px 0;
-      }
-      
-      .experience-company {
-        color: #c0c0c0;
-        font-family: Roboto;
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-      
-      .experience-description {
-        color: #c0c0c0;
-        font-family: Roboto;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      
       @media only screen and (max-width: 1023px) {
         .mob-hidden {
           display: none;
@@ -1043,68 +897,45 @@
         .links {
           justify-content: space-between;
         }
-        
-        /* Mobile Portfolio Styles */
-        .about-section {
-          flex-direction: column;
-          padding: 50px 17px;
-        }
-        
-        .about-image {
-          width: 200px;
-          height: 200px;
-        }
-        
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-        
-        .skills-grid {
-          grid-template-columns: 1fr 1fr;
-        }
       }
     </style>
+    <title>Document</title>
   </head>
   <body>
     <nav>
       <div class="nav-container">
         <a
-          href="#"
+          href="/"
           onclick="gtag('event', 'custom_click', {'link_name': 'nav_logo'})"
-          ><span style="color: white; font-family: 'Roboto Condensed'; font-size: 24px; font-weight: 600;">JOHN DOE</span></a
-        >
+          ><img src="logo.png" alt="logo" class="logo-image" width="96"
+        /></a>
         <div class="nav-links mob-hidden">
           <a
-            href="#projects"
+            href="#pricing"
             class="nav-link"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_projects'})"
-            >Projects</a
+            onclick="gtag('event', 'custom_click', {'link_name': 'nav_pricing'})"
+            >Pricing</a
           >
           <a
-            href="#skills"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_skills'})"
+            href="/"
+            onclick="gtag('event', 'custom_click', {'link_name': 'nav_docs'})"
             class="nav-link"
-            >Skills</a
+            >Docs</a
           >
-          <a
-            href="#about"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_about'})"
-            class="nav-link"
-            >About</a
-          >
+          <!-- <a href="#" class="nav-link">Blog</a> -->
         </div>
         <div class="nav-buttons mob-hidden">
           <a
-            href="#contact"
+            href="http://www.panicken.com/signup"
             class="nav-signin-button"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_contact'})"
-            >Contact</a
+            onclick="gtag('event', 'custom_click', {'link_name': 'nav_signup'})"
+            >Sign Up</a
           >
           <a
-            href="https://github.com/yourusername"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_github'})"
+            href="https://www.panicken.com/app"
+            onclick="gtag('event', 'custom_click', {'link_name': 'nav_create_project'})"
             class="nav-create-button"
-            >GitHub</a
+            >Create Project</a
           >
         </div>
         <button class="menu-button" onclick="menuButton()">
@@ -1126,10 +957,10 @@
     <div class="menu" id="menu">
       <div class="menu-nav">
         <a
-          href="#"
+          href="https://www.panicken.com"
           onclick="gtag('event', 'custom_click', {'link_name': 'nav_phone_logo'})"
-          ><span style="color: white; font-family: 'Roboto Condensed'; font-size: 24px; font-weight: 600;">JOHN DOE</span></a
-        >
+          ><img src="images/logo.png" alt="logo" class="logo-image" width="96"
+        /></a>
         <button class="menu-button" onclick="menuButtonClose()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1139,4 +970,496 @@
             fill="none"
           >
             <path
-              d="M8 23.75L6.25 22L13.25 15L6.25 8L8 6.25L15 13.25L22 6.25L23
+              d="M8 23.75L6.25 22L13.25 15L6.25 8L8 6.25L15 13.25L22 6.25L23.75 8L16.75 15L23.75 22L22 23.75L15 16.75L8 23.75Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="menu-nav-content">
+        <a href="#pricing" onclick="menuButtonPricing()" class="menu-nav-link"
+          >Pricing</a
+        >
+        <a
+          href="http://www.panicken.com/docs"
+          onclick="menuButtonDocs()"
+          class="menu-nav-link"
+          >Documentation</a
+        >
+      </div>
+      <div class="menu-footer">
+        <a
+          href="http://www.panicken.com/signup"
+          onclick="gtag('event', 'custom_click', {'link_name': 'nav_phone_menu_signup'})"
+          class="menu-signin-button"
+          >Sign Up</a
+        >
+        <a
+          href="https://www.panicken.com/app"
+          onclick="gtag('event', 'custom_click', {'link_name': 'nav_phone_menu_create_project'})"
+          class="menu-project-button"
+          >Create Project</a
+        >
+      </div>
+    </div>
+    <section class="intro">
+      <p class="intro-head1">
+        Build<span class="dot1">.</span> Test<span class="dot2">.</span>
+        Deploy<span class="dot3">.</span>
+      </p>
+      <p class="intro-head2">Create API in a flash</p>
+      <p class="intro-para">
+        panicken is a low-code backend builder which lets you build REST APIs
+        quickly. With the simple flowchart-like interface, you can quickly
+        create custom logic for API endpoints. It comes with a built-in
+        Database, Dashboard, Authentication.
+      </p>
+      <div class="intro-buttons">
+        <a
+          href="https://www.panicken.com/app"
+          onclick="gtag('event', 'custom_click', {'link_name': 'intro_create_project'})"
+          class="intro-button-signin"
+          >Create Project</a
+        >
+        <a
+          href="http://www.panicken.com/docs"
+          class="intro-button-docs"
+          onclick="gtag('event', 'custom_click', {'link_name': 'intro_docs'})"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_230_49)">
+              <path
+                d="M17.5 4.5C15.55 4.5 13.45 4.9 12 6C10.55 4.9 8.45 4.5 6.5 4.5C5.05 4.5 3.51 4.72 2.22 5.29C1.49 5.62 1 6.33 1 7.14V18.42C1 19.72 2.22 20.68 3.48 20.36C4.46 20.11 5.5 20 6.5 20C8.06 20 9.72 20.26 11.06 20.92C11.66 21.22 12.34 21.22 12.93 20.92C14.27 20.25 15.93 20 17.49 20C18.49 20 19.53 20.11 20.51 20.36C21.77 20.69 22.99 19.73 22.99 18.42V7.14C22.99 6.33 22.5 5.62 21.77 5.29C20.49 4.72 18.95 4.5 17.5 4.5ZM21 17.23C21 17.86 20.42 18.32 19.8 18.21C19.05 18.07 18.27 18.01 17.5 18.01C15.8 18.01 13.35 18.66 12 19.51V8C13.35 7.15 15.8 6.5 17.5 6.5C18.42 6.5 19.33 6.59 20.2 6.78C20.66 6.88 21 7.29 21 7.76V17.23Z"
+                fill="white"
+              />
+              <path
+                d="M13.98 11.0101C13.66 11.0101 13.37 10.8101 13.27 10.4901C13.14 10.1001 13.36 9.6701 13.75 9.5501C15.29 9.0501 17.28 8.8901 19.11 9.1001C19.52 9.1501 19.82 9.5201 19.77 9.9301C19.72 10.3401 19.35 10.6401 18.94 10.5901C17.32 10.4001 15.55 10.5501 14.21 10.9801C14.13 10.9901 14.05 11.0101 13.98 11.0101Z"
+                fill="white"
+              />
+              <path
+                d="M13.98 13.67C13.66 13.67 13.37 13.47 13.27 13.15C13.14 12.76 13.36 12.33 13.75 12.21C15.28 11.71 17.28 11.55 19.11 11.76C19.52 11.81 19.82 12.18 19.77 12.59C19.72 13 19.35 13.3 18.94 13.25C17.32 13.06 15.55 13.21 14.21 13.64C14.13 13.66 14.05 13.67 13.98 13.67Z"
+                fill="white"
+              />
+              <path
+                d="M13.98 16.3299C13.66 16.3299 13.37 16.1299 13.27 15.8099C13.14 15.4199 13.36 14.9899 13.75 14.8699C15.28 14.3699 17.28 14.2099 19.11 14.4199C19.52 14.4699 19.82 14.8399 19.77 15.2499C19.72 15.6599 19.35 15.9499 18.94 15.9099C17.32 15.7199 15.55 15.8699 14.21 16.2999C14.13 16.3199 14.05 16.3299 13.98 16.3299Z"
+                fill="white"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_230_49">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          Documentation</a
+        >
+      </div>
+    </section>
+    <section class="features">
+      <div class="feature1 feature">
+        <div class="feature-line">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <circle cx="9" cy="9" r="9" fill="#FF5757" />
+            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
+          </svg>
+          <div class="band-init"></div>
+        </div>
+        <h2 class="feature-header">Build like flowchart</h2>
+        <div class="feature-img-bg-init">
+          <img
+            src="images/panicken-flowchart.png"
+            alt="flowchart of blocks"
+            class="feature-img"
+          />
+        </div>
+        <p class="feature-para-init">
+          Unleash your creativity with panicken's flow chart interface. Design and
+          visualize the logic for your API endpoints through a user-friendly
+          drag-and-drop interface. No need to dive into complex code—create,
+          modify, and optimize your backend processes effortlessly.
+        </p>
+      </div>
+      <div class="feature2 feature">
+        <div class="feature-line">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <circle cx="9" cy="9" r="9" fill="#BB5A63" />
+            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
+          </svg>
+          <div class="band-init"></div>
+        </div>
+        <h2 class="feature-header">Built-in database</h2>
+        <div class="feature-img-bg-init">
+          <img
+            src="images/panicken-database.png"
+            alt="flowchart of blocks"
+            class="feature-img"
+          />
+        </div>
+        <p class="feature-para-init">
+          Empower your applications with panicken's powerful built-in database.
+          Enjoy seamless integration and effortless data management, allowing
+          you to focus on building functionalities rather than worrying about
+          database complexities.
+        </p>
+      </div>
+      <div class="feature3 feature">
+        <div class="feature-line">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <circle cx="9" cy="9" r="9" fill="#795A6D" />
+            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
+          </svg>
+          <div class="band-init"></div>
+        </div>
+        <h2 class="feature-header">Dashboard</h2>
+        <div class="feature-img-bg-init">
+          <img
+            src="images/panicken-dashboard.png"
+            alt="flowchart of blocks"
+            class="feature-img"
+          />
+        </div>
+        <p class="feature-para-init">
+          Our intuitive dashboard provides a centralized hub for managing
+          databases and users. Easily monitor and control access, track user
+          activity, and optimize performance—all from one user-friendly
+          interface.
+        </p>
+      </div>
+      <div class="feature">
+        <div class="feature-line">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <circle cx="9" cy="9" r="9" fill="#375A77" />
+            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="pricing-section" id="pricing">
+      <div class="pricing-container">
+        <h2 class="pricing-header">Pricing</h2>
+        <p class="pricing-para">
+          Choose the plan that aligns with your project needs and start building
+          powerful backend solutions effortlessly. Upgrade to Pro for an
+          enhanced development experience and unlock the full potential of
+          panicken.
+        </p>
+        <div class="plans">
+          <div class="free-plan plan">
+            <h3 class="plan-header">Basic</h3>
+            <p class="plan-price">Free</p>
+            <ul class="plan-list">
+              <li class="plan-list-item">1 Free Project</li>
+            </ul>
+            <a
+              href="http://www.panicken.com/app/account/plan/"
+              class="plan-button"
+              onclick="gtag('event', 'custom_click', {'link_name': 'plan_basic_get_started'})"
+              >Get started</a
+            >
+          </div>
+          <div class="pro-plan plan">
+            <h3 class="plan-header">Pro</h3>
+            <p class="plan-price">INR 299/month</p>
+            <ul class="plan-list">
+              <li class="plan-list-item">Unlimited Projects</li>
+              <li class="plan-list-item">External Database</li>
+              <li class="plan-list-item">Access to new features</li>
+            </ul>
+            <a
+              href="http://www.panicken.com/app/account/plan/"
+              class="plan-button"
+              onclick="gtag('event', 'custom_click', {'link_name': 'plan_pro_get_started'})"
+              >Get started</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="community">
+      <h2 class="community-header">Join the community</h2>
+      <p class="community-para">
+        Hi! I'm a Flutter and Web Developer passionate about building beautiful, functional apps and websites. 
+        Let's connect for freelance work or collaborations! Reach out on GitHub or LinkedIn to discuss projects, 
+        share ideas, or just chat about tech.
+      </p>
+      <div class="community-buttons">
+        <a
+          href="https://github.com/yourusername"
+          onclick="gtag('event', 'custom_click', {'link_name': 'join_community_github'})"
+          class="community-button-yt"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12z"
+              fill="white"
+            />
+          </svg>
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/yourusername"
+          onclick="gtag('event', 'custom_click', {'link_name': 'join_community_linkedin'})"
+          class="community-button-discord"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+              fill="white"
+            />
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="logo-social">
+        <div class="footer-logo">
+          <a
+            href="https://www.panicken.com"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_logo'})"
+            ><img
+              src="images/logo.png"
+              alt="logo"
+              class="logo-image"
+              width="96"
+          /></a>
+        </div>
+        <div class="footer-social">
+          <a
+            href="https://www.youtube.com/@panicken"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_social_yt'})"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M23.47 6.1945C23.1898 5.15926 22.3811 4.35056 21.3459 4.07043C19.4835 3.5625 11.9877 3.5625 11.9877 3.5625C11.9877 3.5625 4.49184 3.57789 2.62943 4.08582C1.59418 4.36596 0.785488 5.17465 0.505353 6.20989C-0.0579875 9.51914 -0.276551 14.5615 0.520745 17.7384C0.800879 18.7736 1.60957 19.5823 2.64482 19.8624C4.50723 20.3704 12.003 20.3704 12.003 20.3704C12.003 20.3704 19.4989 20.3704 21.3613 19.8624C22.3965 19.5823 23.2052 18.7736 23.4854 17.7384C24.0795 14.4245 24.2626 9.38523 23.47 6.1945Z"
+                fill="white"
+              />
+              <path
+                d="M9.60181 15.5681L15.8201 11.9664L9.60181 8.36475V15.5681Z"
+                fill="#1C1C1C"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://discord.gg/FFngHY74Rs"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_social_discord'})"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="19"
+              viewBox="0 0 24 19"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_257_7)">
+                <path
+                  d="M20.3303 1.52336C18.7535 0.80145 17.0889 0.289302 15.3789 0C15.1449 0.418288 14.9332 0.848651 14.7447 1.28929C12.9233 1.01482 11.071 1.01482 9.24963 1.28929C9.06097 0.848696 8.84926 0.418339 8.61537 0C6.90435 0.291745 5.23861 0.805108 3.6602 1.52714C0.526645 6.16328 -0.322812 10.6843 0.101917 15.1411C1.937 16.4969 3.99099 17.5281 6.17459 18.1897C6.66627 17.5284 7.10135 16.8269 7.47521 16.0925C6.76512 15.8273 6.07977 15.5001 5.42707 15.1147C5.59885 14.9901 5.76685 14.8617 5.92919 14.7371C7.82839 15.6303 9.90126 16.0934 12 16.0934C14.0987 16.0934 16.1716 15.6303 18.0708 14.7371C18.235 14.8712 18.403 14.9995 18.5729 15.1147C17.9189 15.5007 17.2323 15.8285 16.521 16.0944C16.8944 16.8284 17.3295 17.5294 17.8216 18.1897C20.0071 17.5307 22.0626 16.5001 23.898 15.143C24.3964 9.97452 23.0467 5.49504 20.3303 1.52336ZM8.0132 12.4002C6.82962 12.4002 5.8518 11.3261 5.8518 10.0047C5.8518 8.68334 6.79564 7.59981 8.00942 7.59981C9.2232 7.59981 10.1935 8.68334 10.1727 10.0047C10.1519 11.3261 9.21943 12.4002 8.0132 12.4002ZM15.9868 12.4002C14.8013 12.4002 13.8273 11.3261 13.8273 10.0047C13.8273 8.68334 14.7711 7.59981 15.9868 7.59981C17.2024 7.59981 18.1652 8.68334 18.1444 10.0047C18.1236 11.3261 17.193 12.4002 15.9868 12.4002Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_257_7">
+                  <rect width="24" height="18.1897" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+          <a
+            href="https://twitter.com/panicken_"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_social_x'})"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_257_19)">
+                <path
+                  d="M14.2856 10.172L23.2216 0H21.1048L13.3424 8.8304L7.1472 0H0L9.3704 13.3544L0 24.02H2.1168L10.3088 14.6928L16.8528 24.02H24M2.8808 1.5632H6.1328L21.1032 22.5336H17.8504"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_257_19">
+                  <rect width="24" height="24.0201" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="links">
+        <div class="links-resources">
+          <h4>Resources</h4>
+          <a
+            href="http://www.panicken.com/docs"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_res_docs'})"
+            >Documentation</a
+          >
+          <a
+            href="http://www.panicken.com/signup"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_res_signup'})"
+            >Sign Up</a
+          >
+        </div>
+        <div class="links-company">
+          <h4>Company</h4>
+          <a
+            href="https://www.panicken.com/terms.html"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_company_contact'})"
+            >Terms of service</a
+          >
+          <a
+            href="https://www.panicken.com/privacy.html"
+            onclick="gtag('event', 'custom_click', {'link_name': 'footer_company_privacy'})"
+            >Privacy policy</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Create the observer
+
+      var prevY = 0;
+      var menu = false;
+
+      const menuclick = () => {
+        menu = !menu;
+        if (menu) {
+          document.getElementById("menu").style.display = "flex";
+          document.body.style.overflow = "hidden";
+        } else {
+          document.getElementById("menu").style.display = "none";
+          document.body.style.overflow = "scroll";
+        }
+      };
+
+      function menuButton() {
+        menuclick();
+        gtag("event", "custom_click", { link_name: "nav_phone_menu_open" });
+      }
+
+      function menuButtonClose() {
+        menuclick();
+        gtag("event", "custom_click", { link_name: "nav_phone_menu_close" });
+      }
+
+      function menuButtonPricing() {
+        menuclick();
+        gtag("event", "custom_click", { link_name: "nav_phone_menu_pricing" });
+      }
+
+      function menuButtonDocs() {
+        menuclick();
+        gtag("event", "custom_click", { link_name: "nav_phone_menu_docs" });
+      }
+
+      const featureObserve = (entries) => {
+        // if (scrollY < entries[0].intersectionRect.y) {
+
+        if (entries[0].isIntersecting) {
+          prevY = window.scrollY;
+          var band = entries[0].target.getElementsByClassName("band-init")[0];
+          band.classList.add("band");
+
+          var imgBg = entries[0].target.getElementsByClassName(
+            "feature-img-bg-init"
+          )[0];
+          imgBg.classList.add("feature-img-bg");
+
+          var para =
+            entries[0].target.getElementsByClassName("feature-para-init")[0];
+          para.classList.add("feature-para");
+        } else if (!entries[0].isIntersecting && window.scrollY < prevY) {
+          prevY = window.scrollY;
+          var band = entries[0].target.getElementsByClassName("band-init")[0];
+          band.classList.remove("band");
+
+          var imgBg = entries[0].target.getElementsByClassName(
+            "feature-img-bg-init"
+          )[0];
+          imgBg.classList.remove("feature-img-bg");
+          var para =
+            entries[0].target.getElementsByClassName("feature-para-init")[0];
+          para.classList.remove("feature-para");
+        }
+      };
+
+      const observer1 = new IntersectionObserver(featureObserve);
+      const observer2 = new IntersectionObserver(featureObserve);
+      const observer3 = new IntersectionObserver(featureObserve);
+      observer1.observe(document.querySelector(".feature1"));
+      observer2.observe(document.querySelector(".feature2"));
+      observer3.observe(document.querySelector(".feature3"));
+    </script>
+  </body>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/64c413ebcc26a871b02bdcc2/1h6eurkpf";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+</html>
