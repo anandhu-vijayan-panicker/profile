@@ -3,80 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anandhu V Panicker | Flutter Developer</title>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-5QFSN3D07S"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QFSN3D07S"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-5QFSN3D07S");
     </script>
 
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "1009787346893554");
-      fbq("track", "PageView");
-    </script>
-
-    <!-- Twitter conversion tracking base code -->
-    <script>
-      !(function (e, t, n, s, u, a) {
-        e.twq ||
-          ((s = e.twq =
-            function () {
-              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
-            }),
-          (s.version = "1.1"),
-          (s.queue = []),
-          (u = t.createElement(n)),
-          (u.async = !0),
-          (u.src = "https://static.ads-twitter.com/uwt.js"),
-          (a = t.getElementsByTagName(n)[0]),
-          a.parentNode.insertBefore(u, a));
-      })(window, document, "script");
-      twq("config", "ph57w");
-    </script>
-    <!-- End Twitter conversion tracking base code -->
-
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto Condensed"
-      rel="stylesheet"
-    />
-    <title>panicken | Low Code API Builder</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       html {
         scroll-behavior: smooth;
@@ -89,6 +31,7 @@
         display: flex;
         flex-direction: column;
         background-color: #1c1c1c;
+        color: #fff;
       }
       nav {
         width: 100%;
@@ -130,6 +73,10 @@
         font-weight: 500;
         line-height: normal;
         text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-link:hover {
+        color: #ff5757;
       }
       .nav-buttons {
         display: flex;
@@ -139,14 +86,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         width: 65px;
         height: 25px;
         flex-shrink: 0;
         border-radius: 5px;
         border: 1px solid #454545;
         background: #272727;
-
         color: #fff;
         font-family: Roboto;
         font-size: 12px;
@@ -154,19 +99,21 @@
         font-weight: 400;
         line-height: normal;
         text-decoration: none;
+        transition: all 0.3s;
+      }
+      .nav-signin-button:hover {
+        background: #454545;
       }
       .nav-create-button {
         display: flex;
         align-items: center;
         justify-content: center;
-
         width: 111px;
         height: 25px;
         flex-shrink: 0;
         border-radius: 5px;
         border: 1px solid #ff2626;
         background: #ff5757;
-
         color: #fff;
         font-family: Roboto;
         font-size: 12px;
@@ -174,11 +121,17 @@
         font-weight: 400;
         line-height: normal;
         text-decoration: none;
+        transition: all 0.3s;
+      }
+      .nav-create-button:hover {
+        background: #ff2626;
       }
       .menu {
         display: none;
       }
-      .intro {
+      
+      /* Hero Section */
+      .hero {
         padding: 80px 0 80px;
         background-color: #1c1c1c;
         width: 100%;
@@ -188,10 +141,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-      }
-      .intro-head1 {
-        color: #c0c0c0;
         text-align: center;
+      }
+      .hero-head1 {
+        color: #c0c0c0;
         font-family: Roboto Condensed;
         font-size: 72px;
         font-style: normal;
@@ -224,9 +177,8 @@
         font-weight: 600;
         line-height: normal;
       }
-      .intro-head2 {
+      .hero-head2 {
         color: #9a5a68;
-        text-align: center;
         font-family: Roboto Condensed;
         font-size: 72px;
         font-style: normal;
@@ -234,71 +186,68 @@
         line-height: normal;
         margin: 0;
       }
-      .intro-para {
+      .hero-subtitle {
+        color: #ff5757;
+        font-family: Roboto Condensed;
+        font-size: 24px;
+        margin: 10px 0;
+      }
+      .hero-para {
         color: #fff;
-        text-align: center;
         font-family: Roboto;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 143.555%; /* 22.969px */
+        line-height: 143.555%;
         width: 543px;
         margin: 0;
         padding-top: 31px;
         padding-bottom: 45px;
       }
-      .intro-buttons {
+      .hero-buttons {
         display: flex;
         gap: 32px;
       }
-      .intro-button-signin {
+      .hero-button {
         width: 123px;
         height: 35px;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-
         border-radius: 8px;
+        color: #fff;
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .hero-button-primary {
         border: 1px solid #ff5757;
         background: linear-gradient(97deg, #ff5757 6.3%, #375a77 100%);
-
-        color: #fff;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
       }
-      .intro-button-docs {
-        width: 152px;
-        height: 35px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-
-        border-radius: 8px;
+      .hero-button-primary:hover {
+        background: linear-gradient(97deg, #ff2626 6.3%, #375a77 100%);
+      }
+      .hero-button-secondary {
         border: 1px solid #454545;
         background: #272727;
-
-        color: #fff;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
       }
-      .community {
+      .hero-button-secondary:hover {
+        background: #454545;
+      }
+      
+      /* About Section */
+      .about {
         width: 100%;
         max-width: 956px;
         margin: 0 auto;
         padding: 74px 34px;
       }
-      .community-header {
+      .section-header {
         color: #fff;
         font-family: Roboto Condensed;
         font-size: 36px;
@@ -308,59 +257,224 @@
         margin: 0;
         margin-bottom: 21px;
       }
-      .community-para {
+      .section-para {
         color: #c0c0c0;
         font-family: Roboto;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 143.555%; /* 20.098px */
+        line-height: 143.555%;
         margin: 0;
-        width: 475px;
+        width: 100%;
         margin-bottom: 36px;
       }
-      .community-buttons {
-        display: flex;
+      
+      /* Experience Section */
+      .experience {
+        width: 100%;
+        max-width: 956px;
+        margin: 0 auto;
+        padding: 0 34px 74px;
+      }
+      .experience-item {
+        margin-bottom: 30px;
+        padding-left: 20px;
+        border-left: 2px solid #ff5757;
+      }
+      .experience-title {
+        color: #fff;
+        font-family: Roboto Condensed;
+        font-size: 24px;
+        margin: 0 0 5px 0;
+      }
+      .experience-company {
+        color: #ff5757;
+        font-family: Roboto;
+        font-size: 18px;
+        margin: 0 0 10px 0;
+      }
+      .experience-duration {
+        color: #c0c0c0;
+        font-family: Roboto;
+        font-size: 14px;
+        margin: 0 0 15px 0;
+      }
+      .experience-description {
+        color: #c0c0c0;
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      /* Projects Section */
+      .projects {
+        width: 100%;
+        max-width: 956px;
+        margin: 0 auto;
+        padding: 0 34px 74px;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 30px;
       }
-      .community-button-yt {
-        width: 110px;
-        height: 30px;
-        flex-shrink: 0;
-        border-radius: 8px;
-        border: 1px solid #454545;
+      .project-card {
         background: #272727;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+      .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .project-content {
+        padding: 20px;
+      }
+      .project-title {
+        color: #fff;
+        font-family: Roboto Condensed;
+        font-size: 20px;
+        margin: 0 0 10px 0;
+      }
+      .project-description {
+        color: #c0c0c0;
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 15px 0;
+      }
+      .project-tech {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+      .tech-tag {
+        background: #1c1c1c;
+        color: #ff5757;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+      .project-links {
+        display: flex;
+        gap: 15px;
+      }
+      .project-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
         align-items: center;
+        gap: 5px;
+        transition: color 0.3s;
+      }
+      .project-link:hover {
+        color: #ff5757;
+      }
+      
+      /* Skills Section */
+      .skills {
+        width: 100%;
+        max-width: 956px;
+        margin: 0 auto;
+        padding: 0 34px 74px;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+      }
+      .skill-item {
+        background: #272727;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+      .skill-item:hover {
+        transform: translateY(-5px);
+      }
+      .skill-icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: #ff5757;
+      }
+      .skill-name {
+        color: #fff;
+        font-family: Roboto;
+        font-size: 16px;
+        margin: 0;
+      }
+      
+      /* Contact Section */
+      .contact {
+        width: 100%;
+        max-width: 956px;
+        margin: 0 auto;
+        padding: 0 34px 74px;
+      }
+      .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group.full-width {
+        grid-column: span 2;
+      }
+      .form-label {
+        display: block;
         color: #fff;
         font-family: Roboto;
         font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-        gap: 8px;
+        margin-bottom: 5px;
       }
-      .community-button-discord {
-        width: 102px;
-        height: 30px;
-        flex-shrink: 0;
-        border-radius: 8px;
+      .form-input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
         border: 1px solid #454545;
         background: #272727;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         color: #fff;
         font-family: Roboto;
         font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-        gap: 8px;
       }
+      .form-textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #454545;
+        background: #272727;
+        color: #fff;
+        font-family: Roboto;
+        font-size: 14px;
+        min-height: 150px;
+        resize: vertical;
+      }
+      .submit-button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background: linear-gradient(97deg, #ff5757 6.3%, #375a77 100%);
+        color: #fff;
+        font-family: Roboto;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .submit-button:hover {
+        background: linear-gradient(97deg, #ff2626 6.3%, #375a77 100%);
+      }
+      
+      /* Footer */
       footer {
         display: flex;
         width: 100%;
@@ -376,8 +490,13 @@
         gap: 17px;
         margin-top: 20px;
       }
-      .footer-social svg {
+      .social-link {
         color: #c0c0c0;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+      .social-link:hover {
+        color: #ff5757;
       }
       .links {
         display: flex;
@@ -393,6 +512,10 @@
         line-height: normal;
         margin: 0;
         text-decoration: none;
+        transition: color 0.3s;
+      }
+      .links a:hover {
+        color: #ff5757;
       }
       .links h4 {
         color: #fff;
@@ -403,300 +526,13 @@
         line-height: normal;
         margin: 0;
       }
-      .links-resources,
-      .links-company {
+      .links-resources, .links-company {
         display: flex;
         flex-direction: column;
         gap: 12px;
       }
-      .pricing-section {
-        width: 100%;
-        background: radial-gradient(
-          168.9% 220.61% at -120.61% 47.38%,
-          #ff5757 54.85%,
-          #1c1c1c 100%
-        );
-      }
-      .pricing-container {
-        width: 100%;
-        max-width: 956px;
-        margin: 0 auto;
-        padding: 77px 34px 212px;
-      }
-      .pricing-header {
-        color: #fff;
-        font-family: Roboto Condensed;
-        font-size: 36px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        margin: 0;
-        margin-bottom: 21px;
-      }
-      .pricing-para {
-        color: #c0c0c0;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 143.555%; /* 20.098px */
-        margin: 0;
-        width: 475px;
-        margin-bottom: 83px;
-      }
-      .plans {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 200px;
-      }
-      .plan {
-        width: 177px;
-        height: 333px;
-        flex-shrink: 0;
-        padding: 25px;
-        border-radius: 10px;
-        position: relative;
-      }
-      .free-plan {
-        background: #272727;
-      }
-      .pro-plan {
-        background: linear-gradient(
-          161deg,
-          rgba(255, 87, 87, 0.69) 0%,
-          #272727 100%
-        );
-      }
-      .plan-header {
-        color: #a1a1a1;
-        font-family: Roboto;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        margin: 0;
-      }
-      .plan-price {
-        color: #fff;
-        font-family: Roboto Condensed;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        margin: 0;
-        margin-top: 15px;
-      }
-      .plan-button {
-        width: 123px;
-        height: 30px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: 25px;
-        left: 52px;
-
-        border-radius: 8px;
-        color: #fff;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration: none;
-      }
-      .free-plan .plan-button {
-        border: 1px solid #454545;
-        background: #272727;
-      }
-      .pro-plan .plan-button {
-        border: 1px solid #ff5757;
-
-        background: linear-gradient(97deg, #ff5757 6.3%, #375a77 100%);
-      }
-      .plan-list {
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 89px;
-      }
-      .plan-list-item {
-        display: flex;
-        align-items: center;
-        color: #fff;
-        font-family: Roboto;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        gap: 10px;
-      }
-      .plan-list-item::before {
-        display: block;
-        height: 20px;
-        width: 20px;
-        background: url("images/Vector.png") no-repeat left center;
-        background-size: contain;
-
-        content: "";
-      }
-      .features {
-        width: 100%;
-        max-width: 1024px;
-        padding: 0 0px 152px;
-        margin: 0 auto;
-      }
-      .feature {
-        position: relative;
-        margin-bottom: 81px;
-      }
-      .feature-header {
-        color: #fff;
-        text-align: center;
-        font-family: Roboto Condensed;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        text-align: left;
-        margin: 0;
-        margin-left: 154px;
-        margin-bottom: 69px;
-      }
-      .feature-img-bg-init {
-        padding: 65px 82px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        bottom: -225px;
-        opacity: 0;
-      }
-      .feature-img-bg {
-        padding: 65px 82px;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        bottom: 0;
-        opacity: 1;
-        transition: bottom 1s, opacity 1s;
-      }
-      .feature-img {
-        border-radius: 10px;
-        border: 1px solid #454545;
-      }
-      .feature1 .feature-img-bg {
-        background: radial-gradient(
-          50% 50% at 50% 50%,
-          #dc5a5e 0%,
-          rgba(28, 28, 28, 0.27) 100%
-        );
-      }
-      .feature-para-init {
-        color: #c0c0c0;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 143.555%; /* 20.098px */
-        margin: 0;
-        width: 475px;
-        margin-left: 154px;
-        margin-top: 30px;
-        margin-bottom: 81;
-        opacity: 0;
-        position: relative;
-        bottom: -225px;
-      }
-      .feature-para {
-        color: #c0c0c0;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 143.555%; /* 20.098px */
-        margin: 0;
-        width: 475px;
-        margin-left: 154px;
-        margin-top: 30px;
-        margin-bottom: 81;
-        bottom: 0;
-        opacity: 1;
-        transition: bottom 1s, opacity 1s;
-      }
-      .feature-line {
-        position: absolute;
-        z-index: -9;
-        top: 12px;
-        left: 101px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .band-init {
-        width: 5px;
-        height: 0px;
-        flex-shrink: 0;
-        margin-top: 18px;
-      }
-      .band {
-        width: 5px;
-        height: 826px;
-        flex-shrink: 0;
-        margin-top: 18px;
-        transition: height 1s;
-      }
-      .feature1 .band {
-        background: linear-gradient(
-          180deg,
-          #1c1c1c 0%,
-          #ff5757 15.1%,
-          #bb5a63 84.37%,
-          #1c1c1c 100%
-        );
-      }
-      .feature2 .band {
-        background: linear-gradient(
-          180deg,
-          #1c1c1c 0%,
-          #bb5a63 15.1%,
-          #795a6d 84.37%,
-          #1c1c1c 100%
-        );
-      }
-      .feature2 .feature-img-bg {
-        background: radial-gradient(
-          50% 50% at 50% 50%,
-          #9a5a68 0%,
-          rgba(28, 28, 28, 0.27) 100%
-        );
-      }
-      .feature3 .band {
-        background: linear-gradient(
-          180deg,
-          #1c1c1c 0%,
-          #795a6d 15.1%,
-          #375a77 84.37%,
-          #1c1c1c 100%
-        );
-      }
-      .feature3 .feature-img-bg {
-        background: radial-gradient(
-          50% 50% at 50% 50%,
-          #585a72 0%,
-          rgba(28, 28, 28, 0.27) 100%
-        );
-      }
-      .feature img {
-        width: 867px;
-      }
+      
+      /* Responsive Styles */
       @media only screen and (max-width: 1023px) {
         .mob-hidden {
           display: none;
@@ -751,7 +587,6 @@
           font-weight: 600;
           line-height: normal;
           text-decoration: none;
-
           border-bottom: 1px solid #313131;
           background: #1c1c1c;
         }
@@ -772,7 +607,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-
           color: #fff;
           text-align: center;
           font-family: Roboto;
@@ -792,7 +626,6 @@
           align-items: center;
           justify-content: center;
           text-decoration: none;
-
           color: #fff;
           font-family: Roboto;
           font-size: 14px;
@@ -800,93 +633,32 @@
           font-weight: 400;
           line-height: normal;
         }
-        .intro {
+        .hero {
           padding: 50px 0 80px;
           height: auto;
         }
-        .intro-head1,
-        .intro-head2 {
+        .hero-head1, .hero-head2 {
           font-size: 40px;
         }
-        .dot1,
-        .dot2,
-        .dot3 {
+        .dot1, .dot2, .dot3 {
           font-size: 40px;
         }
-        .intro-para {
+        .hero-para {
           font-size: 14px;
           padding: 31px 17px 36px;
-
           width: auto;
         }
-        .features {
-          padding: 0 0px 52px;
-        }
-        .feature {
-          margin-bottom: 18px;
-        }
-        .feature-header {
+        .section-header {
           font-size: 24px;
-          margin-left: 79px;
-          margin-bottom: 12px;
         }
-        .feature-line {
-          top: 6px;
-          left: 55px;
-        }
-        .feature-img-bg,
-        .feature-img-bg-init {
-          padding: 64px 35px;
-        }
-        .feature img {
-          width: 295px;
-        }
-        .feature-para,
-        .feature-para-init {
-          margin-left: 79px;
-          margin-top: 0;
+        .section-para {
           font-size: 13px;
-          width: 235px;
         }
-        .band {
-          width: 5px;
-          height: 420px;
-          flex-shrink: 0;
-          margin-top: 18px;
-          transition: height 1s;
+        .contact-form {
+          grid-template-columns: 1fr;
         }
-        .pricing-section {
-          background: linear-gradient(180deg, #ff5757 -147.68%, #1c1c1c 97.63%);
-        }
-        .pricing-container {
-          width: calc(100% - 34px);
-          padding: 24px 17px 73px;
-        }
-        .pricing-header {
-          font-size: 24px;
-          margin-bottom: 16px;
-        }
-        .pricing-para {
-          font-size: 13px;
-          width: 100%;
-          margin-bottom: 63px;
-        }
-        .plans {
-          flex-direction: column;
-          gap: 34px;
-        }
-        .community {
-          width: calc(100% - 34px);
-          padding: 56px 17px;
-        }
-        .community-header {
-          font-size: 24px;
-          margin-bottom: 16px;
-        }
-        .community-para {
-          font-size: 13px;
-          width: 100%;
-          margin-bottom: 28px;
+        .form-group.full-width {
+          grid-column: span 1;
         }
         footer {
           flex-direction: column;
@@ -899,455 +671,271 @@
         }
       }
     </style>
-    <title>Document</title>
   </head>
   <body>
     <nav>
       <div class="nav-container">
-        <a
-          href="/"
-          onclick="gtag('event', 'custom_click', {'link_name': 'nav_logo'})"
-          ><img src="logo.png" alt="logo" class="logo-image" width="96"
-        /></a>
+        <a href="/" class="logo-image">Anandhu V Panicker</a>
         <div class="nav-links mob-hidden">
-          <a
-            href="#pricing"
-            class="nav-link"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_pricing'})"
-            >Pricing</a
-          >
-          <a
-            href="/"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_docs'})"
-            class="nav-link"
-            >Docs</a
-          >
-          <!-- <a href="#" class="nav-link">Blog</a> -->
+          <a href="#about" class="nav-link">About</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
         <div class="nav-buttons mob-hidden">
-          <a
-            href="http://www.panicken.com/signup"
-            class="nav-signin-button"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_signup'})"
-            >Sign Up</a
-          >
-          <a
-            href="https://www.panicken.com/app"
-            onclick="gtag('event', 'custom_click', {'link_name': 'nav_create_project'})"
-            class="nav-create-button"
-            >Create Project</a
-          >
+          <a href="#contact" class="nav-signin-button">Hire Me</a>
+          <a href="https://github.com/yourusername" class="nav-create-button">GitHub</a>
         </div>
         <button class="menu-button" onclick="menuButton()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-          >
-            <path
-              d="M5 22.5C4.64583 22.5 4.34896 22.3802 4.10938 22.1406C3.86979 21.901 3.75 21.6042 3.75 21.25C3.75 20.8958 3.86979 20.599 4.10938 20.3594C4.34896 20.1198 4.64583 20 5 20H25C25.3542 20 25.651 20.1198 25.8906 20.3594C26.1302 20.599 26.25 20.8958 26.25 21.25C26.25 21.6042 26.1302 21.901 25.8906 22.1406C25.651 22.3802 25.3542 22.5 25 22.5H5ZM5 16.25C4.64583 16.25 4.34896 16.1302 4.10938 15.8906C3.86979 15.651 3.75 15.3542 3.75 15C3.75 14.6458 3.86979 14.349 4.10938 14.1094C4.34896 13.8698 4.64583 13.75 5 13.75H25C25.3542 13.75 25.651 13.8698 25.8906 14.1094C26.1302 14.349 26.25 14.6458 26.25 15C26.25 15.3542 26.1302 15.651 25.8906 15.8906C25.651 16.1302 25.3542 16.25 25 16.25H5ZM5 10C4.64583 10 4.34896 9.88021 4.10938 9.64062C3.86979 9.40104 3.75 9.10417 3.75 8.75C3.75 8.39583 3.86979 8.09896 4.10938 7.85938C4.34896 7.61979 4.64583 7.5 5 7.5H25C25.3542 7.5 25.651 7.61979 25.8906 7.85938C26.1302 8.09896 26.25 8.39583 26.25 8.75C26.25 9.10417 26.1302 9.40104 25.8906 9.64062C25.651 9.88021 25.3542 10 25 10H5Z"
-              fill="white"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M5 22.5C4.64583 22.5 4.34896 22.3802 4.10938 22.1406C3.86979 21.901 3.75 21.6042 3.75 21.25C3.75 20.8958 3.86979 20.599 4.10938 20.3594C4.34896 20.1198 4.64583 20 5 20H25C25.3542 20 25.651 20.1198 25.8906 20.3594C26.1302 20.599 26.25 20.8958 26.25 21.25C26.25 21.6042 26.1302 21.901 25.8906 22.1406C25.651 22.3802 25.3542 22.5 25 22.5H5ZM5 16.25C4.64583 16.25 4.34896 16.1302 4.10938 15.8906C3.86979 15.651 3.75 15.3542 3.75 15C3.75 14.6458 3.86979 14.349 4.10938 14.1094C4.34896 13.8698 4.64583 13.75 5 13.75H25C25.3542 13.75 25.651 13.8698 25.8906 14.1094C26.1302 14.349 26.25 14.6458 26.25 15C26.25 15.3542 26.1302 15.651 25.8906 15.8906C25.651 16.1302 25.3542 16.25 25 16.25H5ZM5 10C4.64583 10 4.34896 9.88021 4.10938 9.64062C3.86979 9.40104 3.75 9.10417 3.75 8.75C3.75 8.39583 3.86979 8.09896 4.10938 7.85938C4.34896 7.61979 4.64583 7.5 5 7.5H25C25.3542 7.5 25.651 7.61979 25.8906 7.85938C26.1302 8.09896 26.25 8.39583 26.25 8.75C26.25 9.10417 26.1302 9.40104 25.8906 9.64062C25.651 9.88021 25.3542 10 25 10H5Z" fill="white"/>
           </svg>
         </button>
       </div>
     </nav>
+    
     <div class="menu" id="menu">
       <div class="menu-nav">
-        <a
-          href="https://www.panicken.com"
-          onclick="gtag('event', 'custom_click', {'link_name': 'nav_phone_logo'})"
-          ><img src="images/logo.png" alt="logo" class="logo-image" width="96"
-        /></a>
+        <a href="/">Anandhu V Panicker</a>
         <button class="menu-button" onclick="menuButtonClose()">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-          >
-            <path
-              d="M8 23.75L6.25 22L13.25 15L6.25 8L8 6.25L15 13.25L22 6.25L23.75 8L16.75 15L23.75 22L22 23.75L15 16.75L8 23.75Z"
-              fill="white"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M8 23.75L6.25 22L13.25 15L6.25 8L8 6.25L15 13.25L22 6.25L23.75 8L16.75 15L23.75 22L22 23.75L15 16.75L8 23.75Z" fill="white"/>
           </svg>
         </button>
       </div>
       <div class="menu-nav-content">
-        <a href="#pricing" onclick="menuButtonPricing()" class="menu-nav-link"
-          >Pricing</a
-        >
-        <a
-          href="http://www.panicken.com/docs"
-          onclick="menuButtonDocs()"
-          class="menu-nav-link"
-          >Documentation</a
-        >
+        <a href="#about" onclick="menuButtonClose()" class="menu-nav-link">About</a>
+        <a href="#experience" onclick="menuButtonClose()" class="menu-nav-link">Experience</a>
+        <a href="#projects" onclick="menuButtonClose()" class="menu-nav-link">Projects</a>
+        <a href="#skills" onclick="menuButtonClose()" class="menu-nav-link">Skills</a>
+        <a href="#contact" onclick="menuButtonClose()" class="menu-nav-link">Contact</a>
       </div>
       <div class="menu-footer">
-        <a
-          href="http://www.panicken.com/signup"
-          onclick="gtag('event', 'custom_click', {'link_name': 'nav_phone_menu_signup'})"
-          class="menu-signin-button"
-          >Sign Up</a
-        >
-        <a
-          href="https://www.panicken.com/app"
-          onclick="gtag('event', 'custom_click', {'link_name': 'nav_phone_menu_create_project'})"
-          class="menu-project-button"
-          >Create Project</a
-        >
+        <a href="#contact" onclick="menuButtonClose()" class="menu-signin-button">Hire Me</a>
+        <a href="https://github.com/yourusername" class="menu-project-button">GitHub</a>
       </div>
     </div>
-    <section class="intro">
-      <p class="intro-head1">
+    
+    <section class="hero">
+      <h1 class="hero-head1">
         Build<span class="dot1">.</span> Test<span class="dot2">.</span>
         Deploy<span class="dot3">.</span>
+      </h1>
+      <h2 class="hero-head2">Mobile Applications</h2>
+      <h3 class="hero-subtitle">Anandhu V Panicker | Flutter Developer</h3>
+      <p class="hero-para">
+        I'm a passionate Flutter developer with 2+ years of experience creating beautiful, 
+        functional cross-platform applications. I specialize in building robust mobile apps 
+        with clean architecture and excellent user experiences.
       </p>
-      <p class="intro-head2">Create API in a flash</p>
-      <p class="intro-para">
-        panicken is a low-code backend builder which lets you build REST APIs
-        quickly. With the simple flowchart-like interface, you can quickly
-        create custom logic for API endpoints. It comes with a built-in
-        Database, Dashboard, Authentication.
-      </p>
-      <div class="intro-buttons">
-        <a
-          href="https://www.panicken.com/app"
-          onclick="gtag('event', 'custom_click', {'link_name': 'intro_create_project'})"
-          class="intro-button-signin"
-          >Create Project</a
-        >
-        <a
-          href="http://www.panicken.com/docs"
-          class="intro-button-docs"
-          onclick="gtag('event', 'custom_click', {'link_name': 'intro_docs'})"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <g clip-path="url(#clip0_230_49)">
-              <path
-                d="M17.5 4.5C15.55 4.5 13.45 4.9 12 6C10.55 4.9 8.45 4.5 6.5 4.5C5.05 4.5 3.51 4.72 2.22 5.29C1.49 5.62 1 6.33 1 7.14V18.42C1 19.72 2.22 20.68 3.48 20.36C4.46 20.11 5.5 20 6.5 20C8.06 20 9.72 20.26 11.06 20.92C11.66 21.22 12.34 21.22 12.93 20.92C14.27 20.25 15.93 20 17.49 20C18.49 20 19.53 20.11 20.51 20.36C21.77 20.69 22.99 19.73 22.99 18.42V7.14C22.99 6.33 22.5 5.62 21.77 5.29C20.49 4.72 18.95 4.5 17.5 4.5ZM21 17.23C21 17.86 20.42 18.32 19.8 18.21C19.05 18.07 18.27 18.01 17.5 18.01C15.8 18.01 13.35 18.66 12 19.51V8C13.35 7.15 15.8 6.5 17.5 6.5C18.42 6.5 19.33 6.59 20.2 6.78C20.66 6.88 21 7.29 21 7.76V17.23Z"
-                fill="white"
-              />
-              <path
-                d="M13.98 11.0101C13.66 11.0101 13.37 10.8101 13.27 10.4901C13.14 10.1001 13.36 9.6701 13.75 9.5501C15.29 9.0501 17.28 8.8901 19.11 9.1001C19.52 9.1501 19.82 9.5201 19.77 9.9301C19.72 10.3401 19.35 10.6401 18.94 10.5901C17.32 10.4001 15.55 10.5501 14.21 10.9801C14.13 10.9901 14.05 11.0101 13.98 11.0101Z"
-                fill="white"
-              />
-              <path
-                d="M13.98 13.67C13.66 13.67 13.37 13.47 13.27 13.15C13.14 12.76 13.36 12.33 13.75 12.21C15.28 11.71 17.28 11.55 19.11 11.76C19.52 11.81 19.82 12.18 19.77 12.59C19.72 13 19.35 13.3 18.94 13.25C17.32 13.06 15.55 13.21 14.21 13.64C14.13 13.66 14.05 13.67 13.98 13.67Z"
-                fill="white"
-              />
-              <path
-                d="M13.98 16.3299C13.66 16.3299 13.37 16.1299 13.27 15.8099C13.14 15.4199 13.36 14.9899 13.75 14.8699C15.28 14.3699 17.28 14.2099 19.11 14.4199C19.52 14.4699 19.82 14.8399 19.77 15.2499C19.72 15.6599 19.35 15.9499 18.94 15.9099C17.32 15.7199 15.55 15.8699 14.21 16.2999C14.13 16.3199 14.05 16.3299 13.98 16.3299Z"
-                fill="white"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_230_49">
-                <rect width="24" height="24" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-          Documentation</a
-        >
+      <div class="hero-buttons">
+        <a href="#projects" class="hero-button hero-button-primary">View Projects</a>
+        <a href="#contact" class="hero-button hero-button-secondary">Contact Me</a>
       </div>
     </section>
-    <section class="features">
-      <div class="feature1 feature">
-        <div class="feature-line">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-          >
-            <circle cx="9" cy="9" r="9" fill="#FF5757" />
-            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
-          </svg>
-          <div class="band-init"></div>
-        </div>
-        <h2 class="feature-header">Build like flowchart</h2>
-        <div class="feature-img-bg-init">
-          <img
-            src="images/panicken-flowchart.png"
-            alt="flowchart of blocks"
-            class="feature-img"
-          />
-        </div>
-        <p class="feature-para-init">
-          Unleash your creativity with panicken's flow chart interface. Design and
-          visualize the logic for your API endpoints through a user-friendly
-          drag-and-drop interface. No need to dive into complex code—create,
-          modify, and optimize your backend processes effortlessly.
+    
+    <section class="about" id="about">
+      <h2 class="section-header">About Me</h2>
+      <p class="section-para">
+        I'm a dedicated Flutter developer with expertise in building cross-platform mobile applications. 
+        With over 2 years of professional experience, I've worked on various projects ranging from 
+        small business apps to large-scale enterprise solutions. My passion lies in creating 
+        intuitive user interfaces and implementing robust backend functionalities.
+      </p>
+      <p class="section-para">
+        I believe in writing clean, maintainable code and following best practices to ensure 
+        scalability and performance. My approach combines technical expertise with creative 
+        problem-solving to deliver high-quality applications that meet user needs.
+      </p>
+    </section>
+    
+    <section class="experience" id="experience">
+      <h2 class="section-header">Experience</h2>
+      
+      <div class="experience-item">
+        <h3 class="experience-title">Senior Flutter Developer</h3>
+        <h4 class="experience-company">TechSolutions Inc.</h4>
+        <p class="experience-duration">January 2023 - Present</p>
+        <p class="experience-description">
+          Lead developer for multiple Flutter applications, implementing complex features 
+          and optimizing performance. Collaborated with cross-functional teams to deliver 
+          high-quality mobile solutions for clients across various industries.
         </p>
       </div>
-      <div class="feature2 feature">
-        <div class="feature-line">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-          >
-            <circle cx="9" cy="9" r="9" fill="#BB5A63" />
-            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
-          </svg>
-          <div class="band-init"></div>
-        </div>
-        <h2 class="feature-header">Built-in database</h2>
-        <div class="feature-img-bg-init">
-          <img
-            src="images/panicken-database.png"
-            alt="flowchart of blocks"
-            class="feature-img"
-          />
-        </div>
-        <p class="feature-para-init">
-          Empower your applications with panicken's powerful built-in database.
-          Enjoy seamless integration and effortless data management, allowing
-          you to focus on building functionalities rather than worrying about
-          database complexities.
+      
+      <div class="experience-item">
+        <h3 class="experience-title">Flutter Developer</h3>
+        <h4 class="experience-company">AppWorks Pvt Ltd</h4>
+        <p class="experience-duration">June 2021 - December 2022</p>
+        <p class="experience-description">
+          Developed and maintained several Flutter applications, working closely with UI/UX 
+          designers to implement pixel-perfect interfaces. Integrated various APIs and 
+          implemented state management solutions for optimal app performance.
         </p>
       </div>
-      <div class="feature3 feature">
-        <div class="feature-line">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-          >
-            <circle cx="9" cy="9" r="9" fill="#795A6D" />
-            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
-          </svg>
-          <div class="band-init"></div>
-        </div>
-        <h2 class="feature-header">Dashboard</h2>
-        <div class="feature-img-bg-init">
-          <img
-            src="images/panicken-dashboard.png"
-            alt="flowchart of blocks"
-            class="feature-img"
-          />
-        </div>
-        <p class="feature-para-init">
-          Our intuitive dashboard provides a centralized hub for managing
-          databases and users. Easily monitor and control access, track user
-          activity, and optimize performance—all from one user-friendly
-          interface.
+      
+      <div class="experience-item">
+        <h3 class="experience-title">Junior Mobile Developer</h3>
+        <h4 class="experience-company">Digital Innovations</h4>
+        <p class="experience-duration">March 2020 - May 2021</p>
+        <p class="experience-description">
+          Assisted in developing mobile applications using Flutter framework. Gained hands-on 
+          experience with Firebase integration, state management, and API consumption. 
+          Contributed to all phases of the development lifecycle.
         </p>
-      </div>
-      <div class="feature">
-        <div class="feature-line">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-          >
-            <circle cx="9" cy="9" r="9" fill="#375A77" />
-            <circle cx="9" cy="9" r="6" fill="#1C1C1C" />
-          </svg>
-        </div>
       </div>
     </section>
-    <section class="pricing-section" id="pricing">
-      <div class="pricing-container">
-        <h2 class="pricing-header">Pricing</h2>
-        <p class="pricing-para">
-          Choose the plan that aligns with your project needs and start building
-          powerful backend solutions effortlessly. Upgrade to Pro for an
-          enhanced development experience and unlock the full potential of
-          panicken.
-        </p>
-        <div class="plans">
-          <div class="free-plan plan">
-            <h3 class="plan-header">Basic</h3>
-            <p class="plan-price">Free</p>
-            <ul class="plan-list">
-              <li class="plan-list-item">1 Free Project</li>
-            </ul>
-            <a
-              href="http://www.panicken.com/app/account/plan/"
-              class="plan-button"
-              onclick="gtag('event', 'custom_click', {'link_name': 'plan_basic_get_started'})"
-              >Get started</a
-            >
+    
+    <section class="projects" id="projects">
+      <h2 class="section-header">Projects</h2>
+      
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x400?text=E-Commerce+App" alt="E-Commerce App" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">E-Commerce Mobile App</h3>
+            <p class="project-description">
+              A complete e-commerce solution with product listings, cart functionality, 
+              payment gateway integration, and order tracking. Built with Flutter and 
+              Firebase backend.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Payment Gateway</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+            </div>
           </div>
-          <div class="pro-plan plan">
-            <h3 class="plan-header">Pro</h3>
-            <p class="plan-price">INR 299/month</p>
-            <ul class="plan-list">
-              <li class="plan-list-item">Unlimited Projects</li>
-              <li class="plan-list-item">External Database</li>
-              <li class="plan-list-item">Access to new features</li>
-            </ul>
-            <a
-              href="http://www.panicken.com/app/account/plan/"
-              class="plan-button"
-              onclick="gtag('event', 'custom_click', {'link_name': 'plan_pro_get_started'})"
-              >Get started</a
-            >
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x400?text=Fitness+Tracker" alt="Fitness Tracker" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Fitness Tracker</h3>
+            <p class="project-description">
+              A health and fitness application that tracks workouts, nutrition, and progress. 
+              Includes charts, goal setting, and social sharing features.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">SQLite</span>
+              <span class="tech-tag">Charts</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x400?text=Task+Manager" alt="Task Manager" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Task Manager</h3>
+            <p class="project-description">
+              A productivity app for managing tasks with categories, priorities, and deadlines. 
+              Features include reminders, progress tracking, and cloud sync.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Notifications</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x400?text=Weather+App" alt="Weather App" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Weather Forecast</h3>
+            <p class="project-description">
+              A weather application that provides current conditions and forecasts. Includes 
+              location detection, weather maps, and severe weather alerts.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">API Integration</span>
+              <span class="tech-tag">Geolocation</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="project-card">
+          <img src="https://via.placeholder.com/600x400?text=Social+Media" alt="Social Media" class="project-image">
+          <div class="project-content">
+            <h3 class="project-title">Social Media App</h3>
+            <p class="project-description">
+              A social networking platform with user profiles, posts, comments, and real-time 
+              messaging. Includes photo sharing and push notifications.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">WebSockets</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-
-
-    <section class="community">
-      <h2 class="community-header">Join the community</h2>
-      <p class="community-para">
-        Hi! I'm a Flutter and Web Developer passionate about building beautiful, functional apps and websites. 
-        Let's connect for freelance work or collaborations! Reach out on GitHub or LinkedIn to discuss projects, 
-        share ideas, or just chat about tech.
-      </p>
-      <div class="community-buttons">
-        <a
-          href="https://github.com/yourusername"
-          onclick="gtag('event', 'custom_click', {'link_name': 'join_community_github'})"
-          class="community-button-yt"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12z"
-              fill="white"
-            />
-          </svg>
-          GitHub
-        </a>
-        <a
-          href="https://linkedin.com/in/yourusername"
-          onclick="gtag('event', 'custom_click', {'link_name': 'join_community_linkedin'})"
-          class="community-button-discord"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
-              fill="white"
-            />
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-    </section>
-
-
-    <script>
-      // Create the observer
-
-      var prevY = 0;
-      var menu = false;
-
-      const menuclick = () => {
-        menu = !menu;
-        if (menu) {
-          document.getElementById("menu").style.display = "flex";
-          document.body.style.overflow = "hidden";
-        } else {
-          document.getElementById("menu").style.display = "none";
-          document.body.style.overflow = "scroll";
-        }
-      };
-
-      function menuButton() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_open" });
-      }
-
-      function menuButtonClose() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_close" });
-      }
-
-      function menuButtonPricing() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_pricing" });
-      }
-
-      function menuButtonDocs() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_docs" });
-      }
-
-      const featureObserve = (entries) => {
-        // if (scrollY < entries[0].intersectionRect.y) {
-
-        if (entries[0].isIntersecting) {
-          prevY = window.scrollY;
-          var band = entries[0].target.getElementsByClassName("band-init")[0];
-          band.classList.add("band");
-
-          var imgBg = entries[0].target.getElementsByClassName(
-            "feature-img-bg-init"
-          )[0];
-          imgBg.classList.add("feature-img-bg");
-
-          var para =
-            entries[0].target.getElementsByClassName("feature-para-init")[0];
-          para.classList.add("feature-para");
-        } else if (!entries[0].isIntersecting && window.scrollY < prevY) {
-          prevY = window.scrollY;
-          var band = entries[0].target.getElementsByClassName("band-init")[0];
-          band.classList.remove("band");
-
-          var imgBg = entries[0].target.getElementsByClassName(
-            "feature-img-bg-init"
-          )[0];
-          imgBg.classList.remove("feature-img-bg");
-          var para =
-            entries[0].target.getElementsByClassName("feature-para-init")[0];
-          para.classList.remove("feature-para");
-        }
-      };
-
-      const observer1 = new IntersectionObserver(featureObserve);
-      const observer2 = new IntersectionObserver(featureObserve);
-      const observer3 = new IntersectionObserver(featureObserve);
-      observer1.observe(document.querySelector(".feature1"));
-      observer2.observe(document.querySelector(".feature2"));
-      observer3.observe(document.querySelector(".feature3"));
-    </script>
-  </body>
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = "https://embed.tawk.to/64c413ebcc26a871b02bdcc2/1h6eurkpf";
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
-</html>
+    
+    <section class="skills" id="skills">
+      <h2 class="section-header">Skills</h2>
+      
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="fab fa-flutter skill-icon"></i>
+          <h3 class="skill-name">Flutter</h3>
+        </div>
+        
+        <div class="skill-item">
+          <i class="fab fa-dart skill-icon"></i>
+          <h3 class="skill-name">Dart</h3>
+        </div>
+        
+        <div class="skill-item">
+          <i class="fab fa-js skill-icon"></i>
+          <h3 class="skill-name">JavaScript</h3>
+        </div>
+        
+        <div class="skill-item">
+          <i class="fab fa-html5 skill-icon"></i>
+          <h3 class="skill-name">HTML5</h3>
+        </div>
+        
+        <div class="skill-item">
+          <i class="fab fa-css3-alt skill-icon"></i>
+          <h3 class="skill-name">CSS3</h3>
+        </div>
+        
+        <div class="skill-item">
+          <i class="fas fa-database skill-icon"></i>
+          <h3 class="skill-name">SQL</h3>
+        </div>
+        
+        <div class="skill-item">
+          <i class="fab fa-aws skill-icon"></i>
+          <h3 class="skill-name">AWS</h3>
+        </div>
+        
+        <div class="
