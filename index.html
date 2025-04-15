@@ -937,7 +937,8 @@
           <i class="fab fa-aws skill-icon"></i>
           <h3 class="skill-name">AWS</h3>
         </div>
-        
+      </div>
+    </section>
         
 
     <section class="community">
@@ -990,95 +991,4 @@
         </a>
       </div>
     </section>
-<script>
-      // Create the observer
-
-      var prevY = 0;
-      var menu = false;
-
-      const menuclick = () => {
-        menu = !menu;
-        if (menu) {
-          document.getElementById("menu").style.display = "flex";
-          document.body.style.overflow = "hidden";
-        } else {
-          document.getElementById("menu").style.display = "none";
-          document.body.style.overflow = "scroll";
-        }
-      };
-
-      function menuButton() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_open" });
-      }
-
-      function menuButtonClose() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_close" });
-      }
-
-      function menuButtonPricing() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_pricing" });
-      }
-
-      function menuButtonDocs() {
-        menuclick();
-        gtag("event", "custom_click", { link_name: "nav_phone_menu_docs" });
-      }
-
-      const featureObserve = (entries) => {
-        // if (scrollY < entries[0].intersectionRect.y) {
-
-        if (entries[0].isIntersecting) {
-          prevY = window.scrollY;
-          var band = entries[0].target.getElementsByClassName("band-init")[0];
-          band.classList.add("band");
-
-          var imgBg = entries[0].target.getElementsByClassName(
-            "feature-img-bg-init"
-          )[0];
-          imgBg.classList.add("feature-img-bg");
-
-          var para =
-            entries[0].target.getElementsByClassName("feature-para-init")[0];
-          para.classList.add("feature-para");
-        } else if (!entries[0].isIntersecting && window.scrollY < prevY) {
-          prevY = window.scrollY;
-          var band = entries[0].target.getElementsByClassName("band-init")[0];
-          band.classList.remove("band");
-
-          var imgBg = entries[0].target.getElementsByClassName(
-            "feature-img-bg-init"
-          )[0];
-          imgBg.classList.remove("feature-img-bg");
-          var para =
-            entries[0].target.getElementsByClassName("feature-para-init")[0];
-          para.classList.remove("feature-para");
-        }
-      };
-
-      const observer1 = new IntersectionObserver(featureObserve);
-      const observer2 = new IntersectionObserver(featureObserve);
-      const observer3 = new IntersectionObserver(featureObserve);
-      observer1.observe(document.querySelector(".feature1"));
-      observer2.observe(document.querySelector(".feature2"));
-      observer3.observe(document.querySelector(".feature3"));
-    </script>
-  </body>
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = "https://embed.tawk.to/64c413ebcc26a871b02bdcc2/1h6eurkpf";
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
 </html>
