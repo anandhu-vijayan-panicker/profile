@@ -60,49 +60,60 @@
     
     <main>
         <!-- Hero Section -->
-        <section class="relative hero-section overflow-hidden pt-35 md:pt-40 pb-12 lg:pb-30 xl:pt-52">
-            <div class="container">
-                <div class="lg:flex grid grid-cols-1 sm:grid-cols-2 gap-7 md:gap-4 items-center">
-                    <div class="flex flex-col gap-4 md:gap-7 max-w-2xl">
-                        <div>
-                            <div class="flex items-center gap-8">
-                                <h1>I'm Anandhu</h1>
-                                <div class="wave">
-                                    <img alt="wave-icon" loading="lazy" width="62" height="62" decoding="async" data-nimg="1" style="color: transparent" src="images/wave-icon.svg" />
-                                </div>
-                            </div>
-                            <h1>Vijayan Panicker</h1>
+       <section class="relative hero-section overflow-hidden pt-35 md:pt-40 pb-12 lg:pb-30 xl:pt-52">
+    <div class="container">
+        <div class="lg:flex grid grid-cols-1 sm:grid-cols-2 gap-7 md:gap-4 items-center">
+            <div class="flex flex-col gap-4 md:gap-7 max-w-2xl">
+                <div>
+                    <div class="flex items-center gap-8">
+                        <h1>I'm Anandhu</h1>
+                        <div class="wave">
+                            <img 
+                                alt="wave-icon" 
+                                loading="lazy" 
+                                width="62" 
+                                height="62" 
+                                decoding="async" 
+                                style="color: transparent" 
+                                src="images/wave-icon.svg" 
+                            />
                         </div>
-                        <p class="text-secondary font-normal max-w-md xl:max-w-xl">
-                            Software Developer building cross-platform mobile and web applications with Flutter and full-stack technologies. Proven experience delivering robust, user-centric solutions that drive business value. Skilled in architecting, developing, and deploying scalable systems, with a focus on clean code and creating applications that deliver measurable utility and operational advantage.
-                        </p>
                     </div>
-                    <img 
-  alt="banner-img" 
-  loading="lazy" 
-  width="685" 
-  height="650" 
-  decoding="async" 
-  class="block lg:hidden" 
-  style="color: transparent; border-radius: 20px; padding: 20px;" 
-  src="images/dp.png" 
-/>
+                    <h1>Vijayan Panicker</h1>
                 </div>
+                <p class="text-secondary font-normal max-w-md xl:max-w-xl">
+                    Software Developer building cross-platform mobile and web applications with Flutter and full-stack technologies. Proven experience delivering robust, user-centric solutions that drive business value. Skilled in architecting, developing, and deploying scalable systems, with a focus on clean code and creating applications that deliver measurable utility and operational advantage.
+                </p>
             </div>
-            <div class="absolute right-0 top-0 hidden h-auto w-1/2 lg:block 2xl:h-171.5 2xl:w-187.5">
-                <img 
-  alt="banner-img" 
-  loading="lazy" 
-  width="500" 
-  height="500" 
-  decoding="async" 
-  class="absolute right-0 top-0 z-1" 
-  style="color: transparent; border-radius: 20px; padding: 20px;" 
-  src="images/dp.png" 
-/>
-            </div>
-        </section>
-
+            
+            <!-- Mobile Image -->
+            <img 
+                alt="banner-img" 
+                loading="lazy" 
+                width="685" 
+                height="650" 
+                decoding="async" 
+                class="block lg:hidden w-full rounded-[30px] p-2.5" 
+                style="color: transparent;" 
+                src="images/dp.png" 
+            />
+        </div>
+    </div>
+    
+    <!-- Desktop Image (Absolute positioned) -->
+    <div class="absolute right-0 top-0 hidden h-auto w-1/2 lg:block 2xl:w-[45%]">
+        <img 
+            alt="banner-img" 
+            loading="lazy" 
+            width="685" 
+            height="650" 
+            decoding="async" 
+            class="w-full h-auto rounded-[30px] p-2.5" 
+            style="color: transparent;" 
+            src="images/dp.png" 
+        />
+    </div>
+</section>
         <!-- About Me Section -->
         <section>
             <div class="relative bg-softGray py-10 md:py-32">
