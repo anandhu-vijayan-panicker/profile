@@ -572,44 +572,139 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="no-print">
-            <div class="container">
-                <div class="pt-16 md:pt-32 pb-20">
-                    <div class="flex items-center justify-between gap-2 border-b border-black pb-7 mb-9 md:mb-16">
-                        <h2>Contact Me</h2>
-                        <p class="text-xl text-orange-500">( 05 )</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"><form id="contactForm">
+<form id="contactForm">
     <div class="flex flex-col gap-7 sm:gap-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div class="grid grid-cols-2 gap-8">
             <div>
-                <label for="name" class="label block mb-2 text-sm font-medium text-gray-700">Name *</label>
-                <input required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" id="name" name="name" />
+                <label for="name" class="label">Name *</label>
+                <input required class="input" id="name" name="name" />
             </div>
             <div>
-                <label for="phone" class="label block mb-2 text-sm font-medium text-gray-700">Phone *</label>
-                <input required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" id="phone" type="tel" name="phone" />
+                <label for="phone" class="label">Phone *</label>
+                <input required class="input" id="phone" type="tel" name="phone" />
             </div>
         </div>
         <div>
-            <label for="email" class="label block mb-2 text-sm font-medium text-gray-700">Email *</label>
-            <input required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" id="email" type="email" name="email" />
+            <label for="email" class="label">Email *</label>
+            <input required class="input" id="email" type="email" name="email" />
         </div>
         <div>
-            <label for="message" class="label block mb-2 text-sm font-medium text-gray-700">Message *</label>
-            <textarea required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" name="message" id="message" rows="4"></textarea>
+            <label for="message" class="label">Message *</label>
+            <textarea required class="input" name="message" id="message" rows="4"></textarea>
         </div>
-        <div class="flex justify-center">
-            <button type="submit" class="relative overflow-hidden cursor-pointer w-full sm:w-auto min-w-[200px] max-w-[500px] py-5 sm:py-6 px-8 sm:px-10 border-3 border-black rounded-full group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl active:scale-[0.98]">
-                <span class="relative z-10 text-lg sm:text-xl md:text-2xl font-bold text-white flex items-center justify-center gap-3">
-                    <i class="fas fa-paper-plane text-xl sm:text-2xl"></i>
-                    Send Now
-                </span>
-                <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </button>
-        </div>
+        
+        <!-- Enhanced flexible send button -->
+        <button type="submit" class="w-full sm:w-auto min-w-[200px] px-8 py-4 border border-primary rounded-full group overflow-hidden relative cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+            <span class="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-3">
+                <i class="fas fa-paper-plane transition-transform duration-300 group-hover:translate-x-1"></i>
+                <span>Send Now</span>
+            </span>
+            <div class="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+        </button>
     </div>
 </form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Validate form
+    if (!name || !phone || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Change button state to show loading
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalContent = submitBtn.innerHTML;
+    submitBtn.innerHTML = `
+        <span class="relative z-10 text-xl font-medium text-white flex items-center justify-center gap-3">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Sending...</span>
+        </span>
+        <div class="absolute inset-0 bg-primary"></div>
+    `;
+    submitBtn.disabled = true;
+    submitBtn.classList.remove('hover:scale-[1.02]');
+    
+    // Prepare email content
+    const subject = `New Contact Form Message from ${name}`;
+    const body = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+    `.trim();
+    
+    // Create mailto link
+    const mailtoLink = `mailto:anandhuvpanicker@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Simulate sending delay (1.5 seconds) then redirect
+    setTimeout(() => {
+        // Redirect to email client
+        window.location.href = mailtoLink;
+        
+        // Reset button after a moment
+        setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+            submitBtn.classList.add('hover:scale-[1.02]');
+            
+            // Optionally reset form
+            // document.getElementById('contactForm').reset();
+        }, 2000);
+    }, 1500);
+});
+</script>
+
+<style>
+/* Additional styles for the button */
+button[type="submit"] {
+    transition-property: transform, background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Make the button responsive */
+@media (max-width: 640px) {
+    button[type="submit"] {
+        width: 100% !important;
+        min-width: unset !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    button[type="submit"] {
+        width: 80% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Animation for the background fill effect */
+button[type="submit"] .absolute {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure proper z-index for text */
+button[type="submit"] .relative.z-10 {
+    z-index: 10;
+}
+</style>
 
 <script>
     document.getElementById('contactForm').addEventListener('submit', function(e) {
