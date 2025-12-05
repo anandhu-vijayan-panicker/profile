@@ -625,14 +625,121 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-4">Connect With Me</h3>
-                                <div class="flex gap-4">
-                                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-blue-600 hover:text-blue-800">LinkedIn</a>
-                                    <a href="https://github.com/yourprofile" target="_blank" class="text-gray-800 hover:text-black">GitHub</a>
-                                    <a href="https://twitter.com/yourprofile" target="_blank" class="text-blue-400 hover:text-blue-600">Twitter</a>
-                                </div>
-                            </div>
+<div>
+    <h3 class="text-xl font-bold mb-4">Connect With Me</h3>
+    <div class="flex gap-6">
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" 
+           class="social-link group" aria-label="LinkedIn">
+            <div class="social-icon-container bg-blue-50 group-hover:bg-blue-100">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
+                     alt="LinkedIn" class="social-icon" />
+            </div>
+            <span class="social-text text-blue-600 group-hover:text-blue-800">LinkedIn</span>
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/yourprofile" target="_blank" 
+           class="social-link group" aria-label="GitHub">
+            <div class="social-icon-container bg-gray-50 group-hover:bg-gray-100">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+                     alt="GitHub" class="social-icon" />
+            </div>
+            <span class="social-text text-gray-800 group-hover:text-black">GitHub</span>
+        </a>
+        
+        <!-- Stack Overflow -->
+        <a href="https://stackoverflow.com/users/yourprofile" target="_blank" 
+           class="social-link group" aria-label="Stack Overflow">
+            <div class="social-icon-container bg-orange-50 group-hover:bg-orange-100">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stackoverflow/stackoverflow-original.svg" 
+                     alt="Stack Overflow" class="social-icon" />
+            </div>
+            <span class="social-text text-orange-600 group-hover:text-orange-800">Stack Overflow</span>
+        </a>
+        
+        <!-- WhatsApp -->
+        <a href="https://wa.me/yourphonenumber" target="_blank" 
+           class="social-link group" aria-label="WhatsApp">
+            <div class="social-icon-container bg-green-50 group-hover:bg-green-100">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/whatsapp/whatsapp-original.svg" 
+                     alt="WhatsApp" class="social-icon" />
+            </div>
+            <span class="social-text text-green-600 group-hover:text-green-800">WhatsApp</span>
+        </a>
+    </div>
+</div>
+
+<style>
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+}
+
+.social-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.social-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .social-icon-container {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .social-text {
+        font-size: 0.75rem;
+    }
+    
+    .flex.gap-6 {
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .social-icon-container {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+}
+</style>
                         </div>
                     </div>
                 </div>
