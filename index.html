@@ -624,8 +624,7 @@
 </span>
                                     </div>
                                 </div>
-                            </div>
-<div>
+                            </div><div>
     <h3 class="text-xl font-bold mb-4">Connect With Me</h3>
     <div class="flex gap-6">
         <!-- LinkedIn -->
@@ -658,12 +657,13 @@
             <span class="social-text text-orange-600 group-hover:text-orange-800">Stack Overflow</span>
         </a>
         
-        <!-- WhatsApp -->
+        <!-- WhatsApp - Fixed Icon -->
         <a href="https://wa.me/yourphonenumber" target="_blank" 
            class="social-link group" aria-label="WhatsApp">
             <div class="social-icon-container bg-green-50 group-hover:bg-green-100">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/whatsapp/whatsapp-original.svg" 
-                     alt="WhatsApp" class="social-icon" />
+                <svg viewBox="0 0 24 24" class="social-icon" fill="currentColor">
+                    <path d="M20.5 3.5A12.12 12.12 0 0 0 17 2a12.72 12.72 0 0 0-9 3.5A12.73 12.73 0 0 0 2 11a12.68 12.68 0 0 0 1.5 6.5L2 22l4.5-1.5A12.68 12.68 0 0 0 13 20a12.48 12.48 0 0 0 6-1.5 12.18 12.18 0 0 0 3.5-4.5 12.68 12.68 0 0 0 1.5-6.5 11.93 11.93 0 0 0-3.5-8.5zm-8 15.5a10.69 10.69 0 0 1-5.5-1.5l-.5-.5-4 1.5 1.5-4-.5-.5a10.89 10.89 0 0 1-1.5-5.5 10.72 10.72 0 0 1 3-7.5 10.72 10.72 0 0 1 7.5-3 10.89 10.89 0 0 1 5.5 1.5 10.69 10.69 0 0 1 4 4 10.89 10.89 0 0 1 1.5 5.5 10.72 10.72 0 0 1-3 7.5 10.72 10.72 0 0 1-7.5 3zm5.5-8.5c-.3-.2-.7-.3-1.5-.5s-1.3-.3-1.5-.5-.3-.5-.3-.8.2-.7.5-1 .5-.8.5-1-.2-.7-.5-1-.5-.5-.8-.5-.7 0-1 .2-1.5 1.5-2 2.5-.5 1.5-.5 2 0 1.5.5 2.5 1 2 2 2.5 1.5.5 2.5.5 1.5 0 2-.2 1-.5 1.5-1 .5-.8.5-1.2 0-.7-.3-1z"/>
+                </svg>
             </div>
             <span class="social-text text-green-600 group-hover:text-green-800">WhatsApp</span>
         </a>
@@ -699,6 +699,11 @@
     width: 28px;
     height: 28px;
     object-fit: contain;
+}
+
+/* Special styling for SVG icon (WhatsApp) */
+.social-icon-container svg.social-icon {
+    color: #25D366; /* WhatsApp green */
 }
 
 .social-text {
@@ -747,7 +752,7 @@
         </section>
     </main>
 
-    <footer class="py-6 sm:py-14 flex items-center justify-center">
+    <!-- <footer class="py-6 sm:py-14 flex items-center justify-center">
         <div class="container">
             <div class="flex flex-col gap-1.5 items-center sm:items-start">
                 <div class="relative flex items-center w-full">
@@ -762,7 +767,7 @@
                 </p> -->
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <script>
         // Simple form submission handler
