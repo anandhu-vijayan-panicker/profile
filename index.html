@@ -580,31 +580,85 @@
                         <p class="text-xl text-orange-500">( 05 )</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <form id="contactForm">
-                            <div class="flex flex-col gap-7 sm:gap-12">
-                                <div class="grid grid-cols-2 gap-8">
-                                    <div>
-                                        <label for="name" class="label">Name *</label>
-                                        <input required class="input" id="name" name="name" />
-                                    </div>
-                                    <div>
-                                        <label for="phone" class="label">Phone *</label>
-                                        <input required class="input" id="phone" type="tel" name="phone" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="email" class="label">Email *</label>
-                                    <input required class="input" id="email" type="email" name="email" />
-                                </div>
-                                <div>
-                                    <label for="message" class="label">Message *</label>
-                                    <textarea required class="input" name="message" id="message" rows="4"></textarea>
-                                </div>
-                                <button type="submit" class="relative overflow-hidden cursor-pointer w-fit py-2 sm:py-3 md:py-5 px-4 sm:px-5 md:px-7 border border-primary rounded-full group">
-                                    <span class="relative z-10 text-xl font-medium text-primary group-hover:text-white transition-colors duration-300">Send Now</span>
-                                </button>
-                            </div>
-                        </form>
+<form id="contactForm">
+    <div class="flex flex-col gap-7 sm:gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+                <label for="name" class="label block mb-2 text-sm font-medium text-gray-700">Name *</label>
+                <input required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" id="name" name="name" />
+            </div>
+            <div>
+                <label for="phone" class="label block mb-2 text-sm font-medium text-gray-700">Phone *</label>
+                <input required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" id="phone" type="tel" name="phone" />
+            </div>
+        </div>
+        <div>
+            <label for="email" class="label block mb-2 text-sm font-medium text-gray-700">Email *</label>
+            <input required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" id="email" type="email" name="email" />
+        </div>
+        <div>
+            <label for="message" class="label block mb-2 text-sm font-medium text-gray-700">Message *</label>
+            <textarea required class="input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" name="message" id="message" rows="4"></textarea>
+        </div>
+        <div class="flex justify-center">
+            <button type="submit" class="relative overflow-hidden cursor-pointer w-full sm:w-auto min-w-[200px] max-w-[500px] py-3 sm:py-4 px-6 sm:px-8 border-2 border-blue-600 rounded-full group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl active:scale-[0.98]">
+                <span class="relative z-10 text-lg sm:text-xl font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Now
+                </span>
+                <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+            </button>
+        </div>
+    </div>
+</form>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Validate form (basic validation)
+        if (!name || !phone || !email || !message) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Validate email format
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        // Create email content
+        const subject = `New Contact Form Submission from ${name}`;
+        const body = `Name: ${name}%0D%0A` +
+                     `Phone: ${phone}%0D%0A` +
+                     `Email: ${email}%0D%0A` +
+                     `Message: ${message}`;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:anandhuvpanicker@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Optional: Show confirmation message
+        setTimeout(() => {
+            alert('Thank you for your message! Your email client should open with a pre-filled message. If not, please send an email to anandhuvpanicker@gmail.com');
+        }, 500);
+        
+        // Optional: Reset form after submission
+        setTimeout(() => {
+            document.getElementById('contactForm').reset();
+        }, 1000);
+    });
+</script>
                         <div class="flex flex-col gap-8">
                             <div>
                                 <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
