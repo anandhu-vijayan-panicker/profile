@@ -1,25 +1,28 @@
 # Anandhu V. Panicker — Portfolio
 
-A modern single-page portfolio built from resume data. React + Vite + Framer Motion.
+A static single-page portfolio built with HTML, CSS, and JavaScript.
 
 ## Run locally
 
 ```bash
-npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173)
-
-## Build for production
+Or with Python:
 
 ```bash
-npm run build
-npm run preview
+python3 -m http.server 4173
 ```
 
-Deploy the `dist` folder to Vercel, Netlify, or GitHub Pages.
+Open [http://localhost:4173](http://localhost:4173)
 
-## Customize
+## Deploy
 
-Edit `src/data/profile.ts` to update content, links, and projects.
+Upload the project root (including the `images/` folder) to your host. No build step required.
+
+## Files
+
+- `index.html` — page content
+- `style.css` — styles
+- `script.js` — navigation, skills marquee, scroll effects
+- `images/` — `avatar.jpg`, `favicon.svg`, and project screenshots
