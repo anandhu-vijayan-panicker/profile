@@ -1853,6 +1853,38 @@ img {
   }
 }
 
+@media (min-width: 900px) {
+  .contact-network.thread-wrap.is-threaded:not(.is-thread-ready) .thread-lines__path {
+    animation: none;
+  }
+
+  .contact-network .thread-lines__path {
+    vector-effect: non-scaling-stroke;
+  }
+
+  .contact-network .thread-lines__svg {
+    contain: layout paint size;
+  }
+
+  .contact-hub__visual {
+    contain: layout style;
+  }
+
+  .contact-hub__orbit-ring {
+    will-change: transform;
+  }
+
+  .contact-hub__pulse {
+    will-change: transform, opacity;
+  }
+
+  .contact-network:not(.is-inview) .thread-lines__path,
+  .contact-network:not(.is-inview) .contact-hub__orbit-ring,
+  .contact-network:not(.is-inview) .contact-hub__pulse {
+    animation-play-state: paused;
+  }
+}
+
 /* Blogs — LinkedIn embeds */
 .blogs-section {
   overflow: hidden;
@@ -2145,11 +2177,13 @@ img {
 
 .contact-hub__orbit-ring--outer {
   animation: hub-orbit-spin 28s linear infinite;
+  transform: rotate(0deg);
 }
 
 .contact-hub__orbit-ring--inner {
   stroke: rgba(255, 255, 255, 0.1);
   animation: hub-orbit-spin 20s linear infinite reverse;
+  transform: rotate(0deg);
 }
 
 @keyframes hub-orbit-spin {
@@ -2205,8 +2239,8 @@ img {
 }
 
 @keyframes hub-pulse {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
-  100% { transform: translate(-50%, -50%) scale(1.55); opacity: 0; }
+  0% { transform: translate3d(-50%, -50%, 0) scale(1); opacity: 0.7; }
+  100% { transform: translate3d(-50%, -50%, 0) scale(1.55); opacity: 0; }
 }
 
 .contact-node__icon--location {
@@ -2789,7 +2823,16 @@ a.contact-node:hover .contact-node__arrow {
     animation: none !important;
   }
 
+  .contact-hub__orbit-ring,
+  .contact-hub__pulse {
+    will-change: auto;
+  }
+
   .thread-wrap.is-threaded .thread-lines__path {
     opacity: 0.35;
+  }
+
+  .contact-network.thread-wrap.is-thread-ready .thread-lines__path {
+    animation: none !important;
   }
 }

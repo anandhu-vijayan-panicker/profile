@@ -262,6 +262,73 @@ function initProjectsGridFiller() {
 
 /* Thread lines — signature dotted connectors (site-wide) */
 const SVG_NS = 'http://www.w3.org/2000/svg';
+const REVEAL_TRANSITION_MS = 700;
+const REVEAL_STAGGER_S = 0.08;
+const REVEAL_EXTRA_DELAY_S = 0.12;
+
+function isContactNetwork(wrap) {
+  return wrap.classList.contains('contact-network');
+}
+
+function revealCompleteDelay(el) {
+  const stagger = Number(el.dataset.stagger || 0) * REVEAL_STAGGER_S * 1000;
+  const extra = el.classList.contains('reveal--delay') ? REVEAL_EXTRA_DELAY_S * 1000 : 0;
+  return extra + stagger + REVEAL_TRANSITION_MS + 40;
+}
+
+function waitForContactReveals(wrap, cb) {
+  if (prefersReducedMotion) {
+    requestAnimationFrame(() => requestAnimationFrame(cb));
+    return;
+  }
+
+  const reveals = [...wrap.querySelectorAll('.reveal')];
+  if (!reveals.length) {
+    requestAnimationFrame(() => requestAnimationFrame(cb));
+    return;
+  }
+
+  let pending = reveals.length;
+  const finishOne = (el) => {
+    setTimeout(() => {
+      pending -= 1;
+      if (pending === 0) {
+        requestAnimationFrame(() => requestAnimationFrame(cb));
+      }
+    }, revealCompleteDelay(el));
+  };
+
+  reveals.forEach((el) => {
+    if (el.classList.contains('is-visible')) {
+      finishOne(el);
+      return;
+    }
+    const mo = new MutationObserver(() => {
+      if (el.classList.contains('is-visible')) {
+        mo.disconnect();
+        finishOne(el);
+      }
+    });
+    mo.observe(el, { attributes: true, attributeFilter: ['class'] });
+  });
+}
+
+function armContactThreadReady(wrap) {
+  wrap.classList.remove('is-thread-ready');
+  if (!wrap.classList.contains('is-threaded')) return;
+
+  if (prefersReducedMotion) {
+    wrap.classList.add('is-thread-ready');
+    return;
+  }
+
+  const svg = wrap.querySelector('.thread-lines__svg');
+  const ready = () => wrap.classList.add('is-thread-ready');
+  if (svg) {
+    svg.addEventListener('transitionend', ready, { once: true });
+  }
+  setTimeout(ready, 880);
+}
 
 function threadPoint(rect, containerRect, side) {
   const cx = rect.left + rect.width / 2 - containerRect.left;
@@ -323,7 +390,7 @@ function initThreadLines() {
     pathsGroup.replaceChildren();
 
     if (!isEnabled(wrap)) {
-      wrap.classList.remove('is-threaded');
+      wrap.classList.remove('is-threaded', 'is-thread-ready');
       return;
     }
 
@@ -413,25 +480,47 @@ function initThreadLines() {
 
     wrap.classList.toggle('is-threaded', pathsGroup.childElementCount > 0);
 
+    if (isContactNetwork(wrap)) {
+      armContactThreadReady(wrap);
+    }
+
     if (wrap.dataset.threadInteractive !== undefined) {
-      nodes.forEach((node) => {
-        if (node.classList.contains('contact-node--static')) return;
-        node.onmouseenter = () => {
-          pathsGroup.children[node.dataset.pathIndex]?.classList.add('is-active');
-        };
-        node.onmouseleave = () => {
-          pathsGroup.children[node.dataset.pathIndex]?.classList.remove('is-active');
-        };
-      });
+      if (isContactNetwork(wrap)) {
+        if (!wrap.dataset.threadHoverBound) {
+          wrap.dataset.threadHoverBound = '1';
+          wrap.addEventListener('mouseover', (e) => {
+            const node = e.target.closest('.thread-node');
+            if (!node || node.classList.contains('contact-node--static')) return;
+            pathsGroup.children[node.dataset.pathIndex]?.classList.add('is-active');
+          });
+          wrap.addEventListener('mouseout', (e) => {
+            const related = e.relatedTarget;
+            const node = e.target.closest('.thread-node');
+            if (!node || node.classList.contains('contact-node--static')) return;
+            if (related && node.contains(related)) return;
+            pathsGroup.children[node.dataset.pathIndex]?.classList.remove('is-active');
+          });
+        }
+      } else {
+        nodes.forEach((node) => {
+          node.onmouseenter = () => {
+            pathsGroup.children[node.dataset.pathIndex]?.classList.add('is-active');
+          };
+          node.onmouseleave = () => {
+            pathsGroup.children[node.dataset.pathIndex]?.classList.remove('is-active');
+          };
+        });
+      }
     }
   }
 
   function scheduleDraw(wrap) {
     clearTimeout(timers.get(wrap));
-    timers.set(
-      wrap,
-      setTimeout(() => drawWrap(wrap), 80)
-    );
+    const run = () => drawWrap(wrap);
+    const delay = isContactNetwork(wrap)
+      ? () => waitForContactReveals(wrap, run)
+      : run;
+    timers.set(wrap, setTimeout(delay, isContactNetwork(wrap) ? 100 : 80));
   }
 
   const observer = new IntersectionObserver(
@@ -458,12 +547,36 @@ function initThreadLines() {
     }
   });
 
+  let resizeTimer;
   window.addEventListener(
     'resize',
-    () => wraps.forEach(scheduleDraw),
+    () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        wraps.forEach((wrap) => {
+          if (isContactNetwork(wrap) && !wrap.classList.contains('is-threaded')) return;
+          scheduleDraw(wrap);
+        });
+      }, 160);
+    },
     { passive: true }
   );
   window.addEventListener('load', () => wraps.forEach(scheduleDraw));
+
+  const contactSection = document.getElementById('contact');
+  const contactWrap = contactSection?.querySelector('.contact-network');
+  if (contactSection && contactWrap) {
+    const inViewObserver = new IntersectionObserver(
+      ([entry]) => {
+        contactWrap.classList.toggle('is-inview', entry.isIntersecting);
+      },
+      { rootMargin: '80px 0px', threshold: 0.02 }
+    );
+    inViewObserver.observe(contactSection);
+    if (contactSection.getBoundingClientRect().top < window.innerHeight) {
+      contactWrap.classList.add('is-inview');
+    }
+  }
 }
 
 /* Page ready */
